@@ -11,6 +11,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.row {
+  margin: 0;
+}
+
 .navbar {
   background-color: var(--primary-color);
 }
@@ -36,4 +40,18 @@ body {
 .btn-primary {
   background-color: var(--button-color);
   border: none;
+}
+
+.featured {
+  background-color: var(--secondary-color);
+  margin: 10px;
+}
+
+.featured-specs {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.featured-title {
+  font-size: 2rem;
 }

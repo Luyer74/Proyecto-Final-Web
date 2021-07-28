@@ -24,6 +24,11 @@ mongoose.connect(connectionUrl, {
 app.use(cors());
 app.use(express.json());
 
+//settings
+app.set('views','views');
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/static'));
+
 //importar rutas
 const indexRoutes = require('./routes/routeindex');
 

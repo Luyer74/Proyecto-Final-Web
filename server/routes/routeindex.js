@@ -6,7 +6,7 @@ const Setup = require('../models/setup.model');
 app.get('/', async function(req,res){
     var setups = await Setup.find();
     console.log(setups);
-    res.json(setups);
+    res.render('index');
 });
 
 //agregar un setup

@@ -43,10 +43,13 @@ body {
   background-color: var(--button-color);
   border: none;
 }
-
+.btn-secondary {
+  background-color: var(--dark-color);
+  color: white;
+  border: none;
+}
 .featured {
   background-color: var(--secondary-color);
-  margin: 10px;
 }
 
 .featured > * img {
@@ -58,4 +61,12 @@ body {
 
 .featured-title {
   font-size: 2rem;
+}
+
+.second {
+  background-color: var(--terciary-color);
+}
+
+.third {
+  background-color: var(--button-color);
 }

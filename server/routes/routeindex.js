@@ -17,8 +17,16 @@ app.post('/add', async  (req,res) => {
     .catch(err => res.status(400).json('Error ' + err));
 });
 
-//para ver una lista
-app.get('/setup', async (req, res) => {
-    res.render('setup');
+//para ver una lista especifica
+app.get('/setup/:id', async (req, res) => {
+    id = req.params.id;
+    var setup  = await Setup.findById(id);
+    res.render('setup', {setup});
+
+})
+
+//para ver listas
+app.get('/setups', async (req, res) => {
+    res.render('setups');
 })
 module.exports = app;

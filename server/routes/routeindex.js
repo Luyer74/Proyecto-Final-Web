@@ -4,8 +4,8 @@ const Setup = require('../models/setup.model');
 
 //pagina de inicio
 app.get('/', async function(req,res){
-    var setups = await Setup.find();
-    console.log(setups);
+    //var setups = await Setup.find();
+    //console.log(setups);
     res.render('index');
 });
 
@@ -17,4 +17,8 @@ app.post('/add', async  (req,res) => {
     .catch(err => res.status(400).json('Error ' + err));
 });
 
+//para ver una lista
+app.get('/setup', async (req, res) => {
+    res.render('setup');
+})
 module.exports = app;

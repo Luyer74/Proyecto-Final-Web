@@ -14,8 +14,13 @@ app.get('/', async function(req,res){
     res.render('index');
 });
 
-//agregar un setup
-app.post('/add', async  (req,res) => {
+//para crear un setup
+app.get('/setup/create',verify, async (req, res) => {
+    res.render('createSetup');
+})
+
+//post agregar un setup
+app.post('/setup/add', async  (req,res) => {
     var setup = new Setup(req.body);
     await setup.save()
     .then(() => res.json("agregado"))
@@ -95,10 +100,10 @@ app.post('/addUser', async function(req,res){
 
 });
 
-app.get('/listas',verify, async function(req,res){
+app.get('/mySetups',verify, async function(req,res){
 
     //var tasks = await Task.find({user_id: req.userId});
-    res.render('listas');
+    res.render('mySetups');
 });
 
 

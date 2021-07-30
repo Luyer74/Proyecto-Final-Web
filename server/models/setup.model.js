@@ -5,9 +5,15 @@ var Schema = mongoose.Schema;
 var SetupSchema = Schema ({
     name: String,
     description: String,
-    products: Array,
     price:  Number,
-    user: String
+    user: String,
+    products: {
+        monitor: String,
+        computer: String,
+        keyboard: String,
+        mouse: String,
+        desk: String
+    }
     
     /*username: {type: String, required: true},
     name: {type: String, required: true},

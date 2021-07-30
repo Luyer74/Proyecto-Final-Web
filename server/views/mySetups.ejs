@@ -5,7 +5,7 @@ Esto es /mySetups
     <% mySetups.forEach(set => {   %>
         <div class='row'>
             <p>
-                <%= set.name %>
+                <a href='/setup/<%= set._id %>'> <%= set.name %></a>
             </p>
         </div>
     <% })      %>

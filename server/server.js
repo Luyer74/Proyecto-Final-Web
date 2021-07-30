@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+var cookieParser = require("cookie-parser")
 
 //variables de puerto y URL de mongo
 require('dotenv').config();
@@ -23,6 +24,7 @@ mongoose.connect(connectionUrl, {
 //middleware
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.urlencoded({extended:false}));
 
 //settings

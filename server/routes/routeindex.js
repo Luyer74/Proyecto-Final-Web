@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const Setup = require('../models/setup.model');
 const User = require('../models/user.model');
+const verify = require("../middleware/verifyAccess");
+var fs = require('fs');
 var jwt = require("jsonwebtoken");
 
 
@@ -49,39 +51,39 @@ app.post('/login', async function(req,res){
     if(!user) {
 
       //req.flash('message','El usuario no existe')
-      res.redirect('/login');
+        res.redirect('/login');
       //  return res.status(404).send("El usuario no existe");
     }
     // si existe, validar la contraseña
     else {
   
-      var valid = await user.validatePassword(password);
+        var valid = await user.validatePassword(password);
   
       // si la contraseña es valida. Crear un token
-      if (valid) {
+        if (valid) {
   
         var token = jwt.sign({id:user.email,permission:true},process.env.SECRET,{expiresIn: "1h"});
-        console.log(token);
         res.cookie("token",token,{httpOnly: true})
         res.redirect("/");
-      }
+    }
       // si no es valida
-      else {
+        else {
         //req.flash('message','La contraseña es incorrecta')
-        req.flash('message', 'La contraseña es incorrecta')
+            req.flash('message', 'La contraseña es incorrecta')
         
-        res.redirect('/login');
-      }
+            res.redirect('/login');
+        }
   
     }
   
-  });
+});
 
+// Pagina de registro
 app.get('/register', function(req,res){
-
     res.render('register')
-    });
+});
 
+// agregar un nuevo usuario
 app.post('/addUser', async function(req,res){
 
     var user = new User(req.body);
@@ -91,6 +93,19 @@ app.post('/addUser', async function(req,res){
 
         res.redirect("/login")
 
-        });
+});
+
+app.get('/listas',verify, async function(req,res){
+
+    //var tasks = await Task.find({user_id: req.userId});
+    res.render('listas');
+});
+
+
+app.get('/logout',  async (req,res) =>{
+
+    res.clearCookie("token");
+    res.redirect('/')
+})
 
 module.exports = app;

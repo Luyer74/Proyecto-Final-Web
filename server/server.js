@@ -23,6 +23,7 @@ mongoose.connect(connectionUrl, {
 //middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
 //settings
 app.set('views','views');

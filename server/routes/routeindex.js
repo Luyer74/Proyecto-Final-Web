@@ -29,4 +29,16 @@ app.get('/setup/:id', async (req, res) => {
 app.get('/setups', async (req, res) => {
     res.render('setups');
 })
+
+app.get('/login', (req,res) => {
+    res.render('login');
+})
+
+app.post('/login', async (req,res) => {
+    var email = req.body.email;
+    var password = req.body.password;
+
+    res.send('/login');
+})
+
 module.exports = app;

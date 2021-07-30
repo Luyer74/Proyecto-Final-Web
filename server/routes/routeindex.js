@@ -20,11 +20,11 @@ app.get('/setup/create',verify, async (req, res) => {
 })
 
 //post agregar un setup
-app.post('/setup/add', async  (req,res) => {
+app.post('/setup/add', verify, async  (req,res) => {
     var setup = new Setup(req.body);
+    setup.user = req.userId
     await setup.save()
-    .then(() => res.json("agregado"))
-    .catch(err => res.status(400).json('Error ' + err));
+    res.redirect('/mySetups')
 });
 
 //para ver una lista especifica
@@ -40,10 +40,12 @@ app.get('/setups', async (req, res) => {
     res.render('setups');
 })
 
+//render de la pagina de login
 app.get('/login', (req,res) => {
     res.render('login');
 })
 
+//verificacion para el login
 app.post('/login', async function(req,res){
 
     var email = req.body.email;
@@ -102,8 +104,8 @@ app.post('/addUser', async function(req,res){
 
 app.get('/mySetups',verify, async function(req,res){
 
-    //var tasks = await Task.find({user_id: req.userId});
-    res.render('mySetups');
+    mySetups = await Setup.find({user: req.userId});
+    res.render('mySetups', {mySetups});
 });
 
 

@@ -6,7 +6,7 @@ var SetupSchema = Schema ({
     name: String,
     description: String,
     price:  Number,
-    user: String,
+    user: {type: String, required: true},
     products: {
         monitor: String,
         computer: String,

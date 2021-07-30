@@ -1,3 +1,13 @@
 <%- include ("./templates/_header") %> 
+<a class="" href="/setup/create">Crea tu propio Setup</a>
 Esto es /mySetups
+<div class='contaier'>
+    <% mySetups.forEach(set => {   %>
+        <div class='row'>
+            <p>
+                <%= set.name %>
+            </p>
+        </div>
+    <% })      %>
+</div>
 <%- include ("./templates/_footer") %> 

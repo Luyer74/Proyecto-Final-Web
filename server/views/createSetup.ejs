@@ -1,6 +1,6 @@
 <%- include ("./templates/_header") %> 
 <div class='containter'>
-    <form>
+    <form action="/setup/add" method = "POST">
         <div class="form-group">
           <label for="name">Nombre</label>
           <input type="text" class="form-control" id="name" name= "name"placeholder="Nombre">
@@ -9,6 +9,7 @@
           <label for="description">Descripcion</label>
           <textarea class="form-control" id="description" name = "description" rows="3"></textarea>
         </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Crear lista</button>
       </form>
 </div>
 <%- include ("./templates/_footer") %> 

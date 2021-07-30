@@ -7,7 +7,7 @@ var SetupSchema = Schema ({
     description: String,
     products: Array,
     price:  Number,
-    username: String
+    user: String
     
     /*username: {type: String, required: true},
     name: {type: String, required: true},

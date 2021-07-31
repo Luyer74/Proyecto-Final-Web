@@ -1,4 +1,16 @@
 <%- include ("./templates/_header") %> 
 Esto es /setup 
-<p> <%= setup    %></p>
+<div class='container'>
+    <div class='row'>
+         <%= setup._id    %>
+    </div>
+    <div class='row'>
+        <%= setup.name    %>
+   </div>
+   <div class='row'>
+    <%= setup.products    %>
+</div>
+</div>
+
+
 <%- include ("./templates/_footer") %> 

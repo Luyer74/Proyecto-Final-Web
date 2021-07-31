@@ -22,6 +22,7 @@ app.get('/setup/create',verify, async (req, res) => {
 //post agregar un setup
 app.post('/setup/add', verify, async  (req,res) => {
     var setup = new Setup(req.body);
+    setup.products.push(req.body.monitor)
     setup.user = req.userId
     await setup.save()
     res.redirect('/mySetups')

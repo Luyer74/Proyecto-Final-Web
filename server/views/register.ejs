@@ -1,20 +1,42 @@
-<%- include ("./templates/_header") %> 
-<div class="container text-center">
-    <div class="row justify-content-center" >
-        <div class="col-auto align-self-end">
-            <form class="form-signin" action="/addUser" method = "POST">
-                <h1 class="h3 mb-3 font-weight-normal">Registrate!</h1>
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-          
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-          
-              </form>
+<%- include ("./templates/_header") %>
+    <section class="registration py-5">
+        <div class="row px-2 align-items-center">
+            <div class="col-lg-6 p-5">
+                <div class="reg-phrase p-5 text-center">
+                    <h1>Comparte tus setups, crea listas de productos personalizadas y más...</h1>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="row reg-form shadow rounded">
+                    <div class="col">
+                        <form class="form-signin" action="/addUser" method="POST">
+                            <h1 class="h1 font-weight-normal mt-2 text-center mb-5">¡Regístrate!</h1>
+                            <label for="inputUser" class="sr-only">User</label>
+                            <input type="text" id="inputUser" name="name" class="form-control"
+                                placeholder="Nombre de Usuario" required>
+                            <label for="inputEmail" class="sr-only">Email address</label>
+                            <input type="email" id="inputEmail" name="email" class="form-control"
+                                placeholder="Correo Electrónico" required autofocus>
+                            <label for="inputPassword" class="sr-only">Password</label>
+                            <input type="password" id="inputPassword" name="password" class="form-control"
+                                placeholder="Contraseña" required>
+                            <label for="inputConfirmPassword" class="sr-only">Confirm Password</label>
+                            <input type="password" id="inputConfirmPassword" class="form-control"
+                                placeholder="Confirmar Contraseña" required>
+                            <div class="form-check mb-5">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Aceptar términos y condiciones
+                                </label>
+                            </div>
+
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Registro</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-
-<%- include ("./templates/_footer") %> 
+    </section>

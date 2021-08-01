@@ -187,13 +187,12 @@ app.get('/register', function(req,res){
 
 // agregar un nuevo usuario
 app.post('/addUser', async function(req,res){
-
     var user = new User(req.body);
     user.password = user.encryptPassword(user.password);
 
     await user.save()
 
-        res.redirect("/login")
+        res.json(user.password);
 
 });
 

@@ -1,12 +1,12 @@
 <%- include ("./templates/_header") %> 
-<form action="/setup/add" method = "POST">
+<form action="/setup/edit/<%= id%>" method = "POST">
   <div class="container">
 
     <div class="row justify-content-left">
       <div class="col-4">
         <div class="form-group">
           <label for="name">Nombre</label>
-          <input type="text" class="form-control" id="name" name= "name"placeholder="Nombre">
+          <input type="text" class="form-control" id="name" name= "name" placeholder="Nombre" value="<%= setup.name%>">
         </div>
       </div>
     </div>
@@ -15,7 +15,7 @@
       <div class="col-7">
         <div class="form-group">
           <label for="description">Descripcion</label>
-          <textarea class="form-control" id="description" name = "description" rows="2"></textarea>
+          <textarea class="form-control" id="description" name = "description" rows="2""><%= setup.description %></textarea>
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
         </label>
         <% products[0].forEach(c => { %>
           <label>
-            <input type="radio" name="computer" class="card-input-element" value="<%= c._id %>"/>
+            <input type="radio" name="computer" class="card-input-element" value="<%= c._id %>" />
               <div class="card card-input">
                 <h5 class="card-header"><%= c.name %></h5>
                 <div class="card-body">

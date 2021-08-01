@@ -192,7 +192,7 @@ app.post('/addUser', async function(req,res){
 
     await user.save()
 
-        res.json(user.password);
+    res.redirect('/login')
 
 });
 

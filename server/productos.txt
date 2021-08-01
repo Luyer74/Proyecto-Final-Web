@@ -1,0 +1,120 @@
+{
+  "_id": "6105cf199f98d55bc0812f03",
+  "name": "Teclado 3",
+  "price": 155,
+  "brand": "RAZER",
+  "type": "Keyboard",
+  "__v": 0
+},
+{
+  "_id": "6105cefc9f98d55bc0812f01",
+  "name": "Teclado 2",
+  "price": 170,
+  "brand": "LOGITECH",
+  "type": "Keyboard",
+  "__v": 0
+},
+{
+  "_id": "6105ceec9f98d55bc0812eff",
+  "name": "Teclado 1",
+  "price": 150,
+  "brand": "AMAZON",
+  "type": "Keyboard",
+  "__v": 0
+},
+{
+  "_id": "6105ced29f98d55bc0812efd",
+  "name": "Escritorio 3",
+  "price": 300,
+  "brand": "AMAZON",
+  "type": "Desk",
+  "__v": 0
+},
+{
+  "_id": "6105cea49f98d55bc0812efb",
+  "name": "Escritorio 2",
+  "price": 300,
+  "brand": "HM",
+  "type": "Desk",
+  "__v": 0
+},
+{
+  "_id": "6105ce759f98d55bc0812ef9",
+  "name": "Escritorio 1",
+  "price": 100,
+  "brand": "IKEA",
+  "type": "Desk",
+  "__v": 0
+},
+{
+  "_id": "6105ce579f98d55bc0812ef7",
+  "name": "Mouse 3",
+  "price": 25,
+  "brand": "CASIO",
+  "type": "Mouse",
+  "__v": 0
+},
+{
+  "_id": "6105ce3f9f98d55bc0812ef5",
+  "name": "Mouse 2",
+  "price": 30,
+  "brand": "RAZER",
+  "type": "Mouse",
+  "__v": 0
+},
+{
+  "_id": "6105ce2f9f98d55bc0812ef3",
+  "name": "Mouse 1",
+  "price": 20,
+  "brand": "LOGITECH",
+  "type": "Mouse",
+  "__v": 0
+},
+{
+  "_id": "6105ce129f98d55bc0812ef1",
+  "name": "Computadora 3",
+  "price": 1500,
+  "brand": "LENOVO",
+  "type": "Computer",
+  "__v": 0
+},
+{
+  "_id": "6105ce029f98d55bc0812eef",
+  "name": "Computadora 2",
+  "price": 1200,
+  "brand": "ASUS",
+  "type": "Computer",
+  "__v": 0
+},
+{
+  "_id": "6105cdb09f98d55bc0812eed",
+  "name": "Computadora 1",
+  "price": 1000,
+  "brand": "DELL",
+  "type": "Computer",
+  "__v": 0
+},
+{
+  "_id": "6105cd8b9f98d55bc0812eeb",
+  "name": "Monitor C",
+  "price": 400,
+  "brand": "LOGITECH",
+  "type": "Monitor",
+  "__v": 0
+},
+{
+  "_id": "6105cd789f98d55bc0812ee9",
+  "name": "Monitor B",
+  "price": 300,
+  "brand": "ASUS",
+  "type": "Monitor",
+  "__v": 0
+},
+{
+  "_id": "6105cd0e9f98d55bc0812ee7",
+  "name": "Monitor A",
+  "price": 200,
+  "brand": "DELL",
+  "type": "Monitor",
+  "__v": 0
+}

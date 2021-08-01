@@ -10,8 +10,6 @@ var jwt = require("jsonwebtoken");
 
 //pagina de inicio
 app.get('/', async function(req,res){
-    //var setups = await Setup.find();
-    //console.log(setups);
     res.render('index');
 });
 

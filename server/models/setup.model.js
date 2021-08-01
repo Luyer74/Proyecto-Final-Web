@@ -5,15 +5,10 @@ var Schema = mongoose.Schema;
 var SetupSchema = Schema ({
     name: String,
     description: String,
-    price:  Number,
+    price: {type: Number, default: 0},
     user: {type: String, required: true},
-    products: [],
+    products: [null, null, null, null, null],
     img: String
-    /*username: {type: String, required: true},
-    name: {type: String, required: true},
-    price: {type: String, required: true},
-    description: {type: String, required: true},
-    products: {type: [String], required: true}*/
 });
 
 module.exports = mongoose.model('setup', SetupSchema);

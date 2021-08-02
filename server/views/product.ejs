@@ -7,8 +7,19 @@
                     <h1 class="display-4"><%= product.name %> </h1>
                     <p class="h5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error praesentium repudiandae ab molestias illum corrupti nisi eum pariatur, quae fugit ea aspernatur corporis ut blanditiis consequuntur incidunt vel quidem distinctio!</p>
                     <div class="img-container text-center mt-5">
-                        <img src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1356&q=80"
-                            alt="" class="img-fluid product-img rounded shadow">
+                        <% if(product.type == 'Computer') {%>
+                            <img src="https://www.creativefabrica.com/wp-content/uploads/2018/12/Computer-icon-by-rudezstudio-6-580x386.jpg" class="img-fluid product-img rounded shadow" alt="...">
+                        <% } else if(product.type == 'Monitor') {%>
+                            <img src="https://images.samsung.com/is/image/samsung/mx-t35f-lf27t350fhlxzx-frontblack-308825262?$720_576_PNG$" class="img-fluid product-img rounded shadow" alt="...">
+                        <% } else if(product.type == 'Mouse') {%>
+                            <img src="https://www.seekpng.com/png/detail/285-2853781_computer-mouse-by-unit-computer-mouse-drawing-png.png" class="img-fluid product-img rounded shadow" alt="...">
+                        <% } else if(product.type == 'Keyboard') {%>
+                            <img src="https://media.kingston.com/hyperx/product/hx-product-keyboard-alloy-core-rgb-hxkb5me2es-1-sm.jpg" class="img-fluid product-img rounded shadow" alt="...">
+                        <% } else if(product.type == 'Desk') {%>
+                            <img src="https://www.ikea.com/cz/en/images/products/arkelstorp-desk-black__0735967_pe740301_s5.jpg?f=s" class="img-fluid product-img rounded shadow" alt="...">
+                        <% } else {%>
+                            <img src="https://i.stack.imgur.com/y9DpT.jpg" class="card-img-top" alt="...">
+                        <% }%>
                     </div>
                     <br>
                     <h3>Precio: $ <%= product.price %> </h3>

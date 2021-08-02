@@ -1,0 +1,133 @@
+<%- include ("./templates/_header") %>
+
+<section class="products px-5">
+    <div class="product-header">
+        <div class="row p-5 text-center">
+            <div class="col">
+                <div class="product-phrase">
+                    <h1 class="display-4">Productos</h1>
+                    <p class="h5">Contamos con información de los productos más populares para que puedas realizar tu setup de escritorio con la mejor calidad posible desde computadoras hasta escritorios. ¡Agrega los productos que quieras a tu lista y empieza a construir tu setup soñado!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-content rounded">
+        <h3 class="h3">Computadoras</h3>
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Precio</th>
+            </thead>
+            <tbody>
+                <% products[0].forEach(product=> { %>
+                    <tr>
+                        <th scope="row"><a href="/products/<%=product._id %>">
+                                <%= product.name %>
+                            </a> </th>
+                        <td>
+                            <%= product.brand %>
+                        </td>
+                        <td>
+                            <%= product.price %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+        <h3 class="h3">Monitores</h3>
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Precio</th>
+            </thead>
+            <tbody>
+                <% products[1].forEach(product=> { %>
+                    <tr>
+                        <th scope="row"><a href="/products/<%=product._id %>">
+                                <%= product.name %>
+                            </a> </th>
+                        <td>
+                            <%= product.brand %>
+                        </td>
+                        <td>
+                            <%= product.price %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+        <h3 class="h3">Ratones</h3>
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Precio</th>
+            </thead>
+            <tbody>
+                <% products[2].forEach(product=> { %>
+                    <tr>
+                        <th scope="row"><a href="/products/<%=product._id %>">
+                                <%= product.name %>
+                            </a> </th>
+                        <td>
+                            <%= product.brand %>
+                        </td>
+                        <td>
+                            <%= product.price %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+        <h3 class="h3">Teclados</h3>
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Precio</th>
+            </thead>
+            <tbody>
+                <% products[3].forEach(product=> { %>
+                    <tr>
+                        <th scope="row"><a href="/products/<%=product._id %>">
+                                <%= product.name %>
+                            </a> </th>
+                        <td>
+                            <%= product.brand %>
+                        </td>
+                        <td>
+                            <%= product.price %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+        <h3 class="h3">Escritorios</h3>
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Precio</th>
+            </thead>
+            <tbody>
+                <% products[4].forEach(product=> { %>
+                    <tr>
+                        <th scope="row"><a href="/products/<%=product._id %>">
+                                <%= product.name %>
+                            </a> </th>
+                        <td>
+                            <%= product.brand %>
+                        </td>
+                        <td>
+                            <%= product.price %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<%- include ("./templates/_footer") %>

@@ -61,6 +61,36 @@ app.post('/setup/add', verify, async  (req,res) => {
     res.redirect('/mySetups')
 });
 
+app.get('/products', async (req, res) => {
+    var allProducts = await Product.find();
+    //inicializar matriz de productos
+    var products = [];
+    for(var i = 0; i < 5; i++){
+        products[i]=[];
+    };
+    allProducts.forEach(p => {
+        if (p.type == "Computer") {
+            products[0].push(p);
+        } else if (p.type == "Monitor") {
+            products[1].push(p);
+        } else if (p.type == "Mouse") {
+            products[2].push(p);
+        } else if (p.type == "Keyboard") {
+            products[3].push(p);
+        } else if (p.type == "Desk") {
+            products[4].push(p);
+        }
+    });
+    res.render('products', {products});
+})
+
+app.get('/products/:id', async (req, res) => {
+    var id = req.params.id;
+    var product = await Product.findById(id);
+    res.render('product', {product});
+})
+
+
 app.post('/product/add', async  (req,res) => {
     var product = new Product(req.body);
     await product.save()

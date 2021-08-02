@@ -1,16 +1,31 @@
 <%- include ("./templates/_header") %> 
-<a class="" href="/setup/create">Crea tu propio Setup</a>
-Esto es /mySetups
-<div class='contaier'>
-    <% mySetups.forEach(set => {   %>
-        <div class='row'>
-            <p>
-                <a href='/setup/<%= set._id %>'> <%= set.name %></a>
-            </p>
-            <p>
-                <a href='/setup/<%= set._id %>'> <%= set.description %></a>
-            </p>
+<div class='contaier mt-3'>
+    <div class="row align-items-center">
+        <div class="col-auto">
+            <h1>Mis Listas</h1>
         </div>
-    <% })      %>
+        <div class="col">
+            <a class="btn btn-primary btn-lg" href="/setup/create">Crea tu propio Setup</a>
+        </div>
+        
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 m-3">
+        <% mySetups.forEach(set => {   %>
+            <a class="btn" href='/setup/<%= set._id %>'>
+                <div class="card text-left">
+                    <img src="https://i.stack.imgur.com/y9DpT.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= set.name %></h5>
+                      <p class="card-text">$<%= set.price %></p>
+                      <p class="card-text"><%= set.description %></p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted"><%= set.user %></small>
+                    </div>
+                </div>
+            </a>
+        <% })      %>
+    </div>
 </div>
 <%- include ("./templates/_footer") %> 

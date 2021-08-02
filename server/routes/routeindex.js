@@ -96,6 +96,9 @@ app.post('/product/add', async  (req,res) => {
 app.get('/setup/edit/:id',verify, async (req, res) => {
     id = req.params.id;
     var setup  = await Setup.findById(id);
+    if(setup.user != req.userId) {
+        res.redirect('/')
+    }
     allProducts = await Product.find();
     products = [];
     for(var i = 0; i < 5; i++){

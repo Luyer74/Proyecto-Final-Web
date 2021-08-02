@@ -13,11 +13,75 @@
                     <br>
                     <h3>Precio: $ <%= product.price %> </h3>
                     <h3>Marca: <%= product.brand %> </h3>
-                    <button type="button" class="btn btn-primary btn-lg mt-2">Agregar a una lista</button> &nbsp;
+                    <button type="button" class="btn btn-primary btn-lg mt-2" data-toggle="modal" id="addItem">Agregar a una lista</button> &nbsp;
                     <button type="button" class="btn btn-light btn-lg mt-2">Comprar</button>
                 </div>
             </div>
         </div>
     </div>
+    <div class="modal fade" id="showLists" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Mis Listas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-lists">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#showLists').on('hidden.bs.modal', function (e) {
+            $('#modal-lists').html("");
+        })
+    </script>
+    <script>
+        $('#addItem').on("click", () => {
+            $.get('/lists/get', function(data){
+                if(typeof(data) != "object"){
+                    var par = document.createElement('p');
+                    par.innerText = "No estás registrado";
+                    $('#modal-lists').append(par);
+                }
+                else if(data.length != 0){
+                    data.forEach(element => {
+                        var par = document.createElement('p');
+                        par.innerText = element.name;
+                        $('#modal-lists').append(par);
+                        var button = document.createElement('button');
+                        $(button).addClass('btn btn-primary submit-prod');
+                        $(button).attr('type', 'button');
+                        $(button).on("click", function(){
+                            var urlString = `${window.location.pathname}/addToList`;
+                            var data = {
+                                list_id : element._id
+                            }
+                            $.post(urlString, data)
+                            .then(function(data){
+                                console.log(data);
+                            })
+                        })
+                        button.innerText = 'Agregar aqui';
+                        $('#modal-lists').append(button);
+                    });
+                }
+                else{
+                    var par = document.createElement('p');
+                    par.innerText = "No tienes listas creadas."
+                    $('#modal-lists').append(par);
+                }
+            });
+            $('#showLists').modal('show');
+        })
+    </script>
 </section>
 <%- include ("./templates/_footer") %>

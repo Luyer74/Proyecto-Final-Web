@@ -1,16 +1,16 @@
 <%- include ("./templates/_header") %> 
-Esto es /setup 
+Esto es /list 
 <div class='container'>
     <div class='row'>
-         <%= setup._id    %>
+         <%= list._id    %>
     </div>
     <div class='row'>
-        <%= setup.name    %>
+        <%= list.name    %>
    </div>
    <div class='row'>
-    <%= setup.products    %>
+    <%= list.products    %>
     </div>
-    <a href="/setup/edit/<%= setup._id%>" class="btn btn-primary"> Editar lista</a>
+    <a href="/list/edit/<%= list._id%>" class="btn btn-primary"> Editar lista</a>
     
 </div>
 

@@ -1,0 +1,16 @@
+<%- include ("./templates/_header") %> 
+<a class="" href="/lists/create">Crea tu propio Setup</a>
+Esto es /lists
+<div class='contaier'>
+    <% lists.forEach(set => {   %>
+        <div class='row'>
+            <p>
+                <a href='/lists/<%= set._id %>'> <%= set.name %></a>
+            </p>
+            <p>
+                <a href='/lists/<%= set._id %>'> <%= set.description %></a>
+            </p>
+        </div>
+    <% })      %>
+</div>
+<%- include ("./templates/_footer") %> 

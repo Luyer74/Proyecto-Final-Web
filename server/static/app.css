@@ -141,3 +141,14 @@ td {
 .product-img {
   border: 5px white solid;
 }
+
+.lists {
+  background-color: var(--dark-color);
+  color: white;
+}
+
+.lists-content {
+  background-color: var(--secondary-color);
+  color: black;
+  padding: 20px;
+}

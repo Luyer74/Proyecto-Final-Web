@@ -68,6 +68,7 @@
                             $.post(urlString, data)
                             .then(function(data){
                                 console.log(data);
+                                window.location.href = `/lists/${element._id}`;
                             })
                         })
                         button.innerText = 'Agregar aqui';

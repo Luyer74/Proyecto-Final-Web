@@ -7,7 +7,7 @@ var SetupSchema = Schema ({
     description: String,
     price: {type: Number, default: 0},
     user: {type: String, required: true},
-    products: [String],
+    products: [{type: Schema.Types.ObjectId, ref: 'product'}],
     img: String
 });
 

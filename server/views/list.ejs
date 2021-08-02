@@ -1,18 +1,65 @@
 <%- include ("./templates/_header") %> 
-Esto es /list 
-<div class='container'>
-    <div class='row'>
-         <%= list._id    %>
+<section class="lists px-5 pb-5">
+    <div class="lists-header">
+        <div class="row p-5 text-center">
+            <div class="col">
+                <h1 class="display-4"><%= list.name %> </h1>
+                <p class="h5"><%= list.description %> </p>
+            </div>
+        </div>
     </div>
-    <div class='row'>
-        <%= list.name    %>
-   </div>
-   <div class='row'>
-    <%= list.products    %>
+    <div class="lists-content rounded">
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Tipo</th>
+                <th scope="col"></th>
+            </thead>
+            <tbody>
+                <% products.forEach(prod=> {%>
+                    <tr>
+                        <th scope="row"><a href="/lists/<%=prod._id %>">
+                                <%= prod.name %>
+                            </a> </th>
+                        <td>
+                            <%= prod.price %>
+                        </td>
+                        <td>
+                            <%= prod.brand %>
+                        </td>
+                        <td>
+                            <%= prod.type %>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary del-prod" data-prod="<%=prod._id%>">Eliminar</button>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
     </div>
-    <a href="/list/edit/<%= list._id%>" class="btn btn-primary"> Editar lista</a>
-    
-</div>
+    <div class="row p-5 text-center">
+        <div class="col">
+            <a class="btn btn-danger btn-lg" href="/lists/<%=list._id%>/delete" role="button">Borrar Lista</a>
+        </div>
+    </div>
+</section>
 
+<script>
+    $('.del-prod').on("click", function(){
+        var urlString = `${window.location.pathname}/deleteProduct`;
+        var prod_id = $(this).attr('data-prod');
+        var data = {
+            prod_id: prod_id
+        }
+        $.post(urlString, data)
+            .then(function (data) {
+                console.log(data);
+                window.location.href = `${window.location.pathname}`
+            })
+    })
+</script>
 
 <%- include ("./templates/_footer") %> 

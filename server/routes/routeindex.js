@@ -1,8 +1,8 @@
 const express = require('express');
-const app = express();
-const Setup = require('../models/setup.model');
-const Product = require('../models/product.model');
 const User = require('../models/user.model');
+const Product = require('../models/product.model');
+const Setup = require('../models/setup.model');
+const app = express();
 const verify = require("../middleware/verifyAccess");
 var fs = require('fs');
 var jwt = require("jsonwebtoken");
@@ -43,8 +43,37 @@ app.get('/lists/get', verify, async (req, res) => {
 //ver una lista especifica
 app.get('/lists/:id', verify, async (req, res) => {
     var id = req.params.id;
-    var list  = await Setup.findById(id);
-    res.render('list', {list});
+    var list = await Setup.findById(id);
+    var products = null;
+    await Setup.findById(id)
+    .populate('products')
+    .then(function(data){
+        if(data != null){
+            products = data.products;
+        }
+    })
+    if(products != null){
+        res.render('list', {list, products});
+    }
+    else{
+        res.redirect('/lists');
+    }
+})
+
+//borrar lista
+app.get('/lists/:id/delete', verify, async (req, res) => {
+    var id = req.params.id;
+    await Setup.remove({_id: id});
+    res.redirect('/lists');
+})
+
+app.post('/lists/:id/deleteProduct', verify, async (req, res) => {
+    var id = req.params.id;
+    var prod_id = req.body.prod_id;
+    var list = await Setup.findById(id);
+    list.products.pull({_id: prod_id});
+    await list.save();
+    res.send('producto eliminado');
 })
 
 app.post('/products/:id/addToList', verify, async(req, res) => {

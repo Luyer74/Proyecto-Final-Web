@@ -1,8 +1,10 @@
 <%- include ("./templates/_header") %> 
 <form action="/setup/edit/<%= id%>" method = "POST">
-  <div class="container">
-
-    <div class="row justify-content-left">
+  <div class="container mt-3">
+    <h1>Edita tu lista</h1>
+  </div>
+  <div class="container mt-3">
+    <div class="row justify-content-left mt-2">
       <div class="col-4">
         <div class="form-group">
           <label for="name">Nombre</label>
@@ -184,7 +186,7 @@
         </label>
         <% products[4].forEach(c => { %>
           <label>
-            <% if(setup.products[3] != null) {if (JSON.stringify(setup.products[4]._id) == JSON.stringify(c._id)) { %>
+            <% if(setup.products[4] != null) {if (JSON.stringify(setup.products[4]._id) == JSON.stringify(c._id)) { %>
               <input type="radio" name="desk" class="card-input-element" value="<%= c._id %>" checked/>
             <%} else {  %>
               <input type="radio" name="desk" class="card-input-element" value="<%= c._id %>" unchecked/>
@@ -208,7 +210,7 @@
 
     <div class="row justify-content-left">
       <div class="col-5">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Editar lista</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Guardar cambios</button>
       </div>
     </div>
   </div>

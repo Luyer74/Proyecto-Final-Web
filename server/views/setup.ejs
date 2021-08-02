@@ -1,17 +1,35 @@
 <%- include ("./templates/_header") %> 
-Esto es /setup 
-<div class='container'>
-    <div class='row'>
-         <%= setup._id    %>
-    </div>
-    <div class='row'>
-        <%= setup.name    %>
-   </div>
-   <div class='row'>
-    <%= setup.products    %>
+<div class='container-fluid mt-3'>
+        <div class="row">
+            <div class="col">
+                <h1> <%= setup.name %></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p><%= setup.description %></p> 
+            </div>
+        </div>
+        
+
+    <div class="row row-cols-1 row-cols-md-3 mt-2"">
+            <% setup.products.forEach(p => { %>
+                <% if(p != null) {%>
+                <div class="card">
+                    <img src="https://i.stack.imgur.com/y9DpT.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= p.name %></h5>
+                      <p class="card-text">$<%= p.price %></p>
+                      <p class="card-text">Marca: <%= p.brand %></p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted"><%= p.type %></small>
+                    </div>
+                </div>
+                  <% } %>
+            <% }) %>
     </div>
     <a href="/setup/edit/<%= setup._id%>" class="btn btn-primary"> Editar lista</a>
-    
 </div>
 
 

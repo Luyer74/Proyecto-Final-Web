@@ -57,6 +57,7 @@ app.post('/setup/add', verify, async  (req,res) => {
             setup.price = setup.price + p.price;
         }
     })
+    if(setup.name =='') {setup.name = "Mi lista"}
     await setup.save()
     res.redirect('/mySetups')
 });
@@ -96,7 +97,7 @@ app.get('/setup/edit/:id',verify, async (req, res) => {
 app.post('/setup/edit/:id',verify, async (req, res) => {
     id = req.params.id;
     var setup  = await Setup.findById(id);
-    setup.name = req.body.name;
+    setup.name = (req.body.name == '') ? "Mi lista": req.body.name
     setup.description = req.body.description;
     setup.price = 0;
     setup.user = req.userId;

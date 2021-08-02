@@ -1,0 +1,41 @@
+<%- include ("./templates/_header") %> 
+<div class='container-fluid mt-3'>
+        <div class="row">
+            <div class="col">
+                <h1> Todos los Productos</h1>
+            </div>
+        </div>
+
+    <div class="row row-cols-1 row-cols-md-3 mt-2"">
+            <% products.forEach(c => { %>
+                <% c.forEach(p => {%>
+                <div class="card">
+                    <% if(p.type == 'Computer') {%>
+                        <img src="https://www.creativefabrica.com/wp-content/uploads/2018/12/Computer-icon-by-rudezstudio-6-580x386.jpg" class="card-img-top" alt="...">
+                    <% } else if(p.type == 'Monitor') {%>
+                        <img src="https://images.samsung.com/is/image/samsung/mx-t35f-lf27t350fhlxzx-frontblack-308825262?$720_576_PNG$" class="card-img-top" alt="...">
+                    <% } else if(p.type == 'Mouse') {%>
+                        <img src="https://www.seekpng.com/png/detail/285-2853781_computer-mouse-by-unit-computer-mouse-drawing-png.png" class="card-img-top" alt="...">
+                    <% } else if(p.type == 'Keyboard') {%>
+                        <img src="https://media.kingston.com/hyperx/product/hx-product-keyboard-alloy-core-rgb-hxkb5me2es-1-sm.jpg" class="card-img-top" alt="...">
+                    <% } else if(p.type == 'Desk') {%>
+                        <img src="https://www.ikea.com/cz/en/images/products/arkelstorp-desk-black__0735967_pe740301_s5.jpg?f=s" class="card-img-top" alt="...">
+                    <% } else {%>
+                        <img src="https://i.stack.imgur.com/y9DpT.jpg" class="card-img-top" alt="...">
+                    <% }%>
+                    <div class="card-body">
+                      <h5 class="card-title"><%= p.name %></h5>
+                      <p class="card-text">$<%= p.price %></p>
+                      <p class="card-text">Marca: <%= p.brand %></p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted"><%= p.type %></small>
+                    </div>
+                </div>
+                  <% }) %>
+            <% }) %>
+    </div>
+</div>
+
+
+<%- include ("./templates/_footer") %> 

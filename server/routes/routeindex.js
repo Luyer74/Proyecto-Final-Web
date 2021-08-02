@@ -37,6 +37,29 @@ app.get('/setup/create',verify, async (req, res) => {
     res.render('createSetup', {products});
 })
 
+app.get('/products', async (req, res) => {
+    allProducts = await Product.find();
+    products = [];
+    for(var i = 0; i < 5; i++){
+        products[i]=[];
+    };
+    products[0] = [];
+    allProducts.forEach(p => {
+        if (p.type == "Computer") {
+            products[0].push(p);
+        } else if (p.type == "Monitor") {
+            products[1].push(p);
+        } else if (p.type == "Mouse") {
+            products[2].push(p);
+        } else if (p.type == "Keyboard") {
+            products[3].push(p);
+        } else if (p.type == "Desk") {
+            products[4].push(p);
+        }
+    });
+    res.render('products', {products});
+})
+
 //post agregar un setup
 app.post('/setup/add', verify, async  (req,res) => {
     var setup = new Setup(req.body);

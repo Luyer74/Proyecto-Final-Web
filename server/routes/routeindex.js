@@ -89,14 +89,13 @@ app.get('/setup/edit/:id',verify, async (req, res) => {
         } else if (p.type == "Desk") {
             products[4].push(p);
         }
-    });
+    }); 
     res.render('editSetup', {setup, products, id});
 })
 
 app.post('/setup/edit/:id',verify, async (req, res) => {
     id = req.params.id;
     var setup  = await Setup.findById(id);
-    console.log(setup);
     setup.name = req.body.name;
     setup.description = req.body.description;
     setup.price = 0;
@@ -118,7 +117,6 @@ app.post('/setup/edit/:id',verify, async (req, res) => {
         }
     })
     await Setup.updateOne({_id: id}, setup)
-    console.log(setup)
     res.redirect('/mySetups')
 })
 

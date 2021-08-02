@@ -25,7 +25,7 @@
         <p class="col">Computadora</p>
         <div class="card-group">
         <label>
-          <input type="radio" name="computer" class="card-input-element" value="" checked/>
+          <input type="radio" name="computer" class="card-input-element" value="" <%= setup.products[0] == null ? 'checked' : '' %>/>
             <div class="card card-input">
               <h5 class="card-header">N/A</h5>
               <div class="card-body">
@@ -35,7 +35,14 @@
         </label>
         <% products[0].forEach(c => { %>
           <label>
-            <input type="radio" name="computer" class="card-input-element" value="<%= c._id %>" />
+            <% if(setup.products[0] != null) {if(JSON.stringify(setup.products[0]._id) == JSON.stringify(c._id)) { %>
+              <input type="radio" name="computer" class="card-input-element" value="<%= c._id %>" checked/>
+            <%} else {  %>
+              <input type="radio" name="computer" class="card-input-element" value="<%= c._id %>" unchecked/>
+            <% }} else {%>
+              <input type="radio" name="computer" class="card-input-element" value="<%= c._id %>" unchecked/>
+            <% }%>
+            
               <div class="card card-input">
                 <h5 class="card-header"><%= c.name %></h5>
                 <div class="card-body">
@@ -54,7 +61,7 @@
         <p class="col">Monitor</p>
         <div class="card-group">
           <label>
-            <input type="radio" name="monitor" class="card-input-element" value="" checked/>
+            <input type="radio" name="monitor" class="card-input-element" value="" <%= setup.products[1] == null ? 'checked' : '' %>/>
               <div class="card card-input">
                 <h5 class="card-header">N/A</h5>
                 <div class="card-body">
@@ -64,7 +71,14 @@
           </label>
           <% products[1].forEach(c => { %>
             <label>
-              <input type="radio" name="monitor" class="card-input-element" value="<%= c._id %>"/>
+              <% if(setup.products[1] != null) {if (JSON.stringify(setup.products[1]._id) == JSON.stringify(c._id)) { %>
+                <input type="radio" name="monitor" class="card-input-element" value="<%= c._id %>" checked/>
+              <%} else {  %>
+                <input type="radio" name="monitor" class="card-input-element" value="<%= c._id %>" unchecked/>
+              <% }} else {%>
+                <input type="radio" name="monitor" class="card-input-element" value="<%= c._id %>" unchecked/>
+              <% }%>
+              
                 <div class="card card-input">
                   <h5 class="card-header"><%= c.name %></h5>
                   <div class="card-body">
@@ -83,7 +97,7 @@
         <p class="col">Mouse</p>
         <div class="card-group">
           <label>
-            <input type="radio" name="mouse" class="card-input-element" value="" checked/>
+            <input type="radio" name="mouse" class="card-input-element" value="" <%= setup.products[2] == null ? 'checked' : '' %>/>
               <div class="card card-input">
                 <h5 class="card-header">N/A</h5>
                 <div class="card-body">
@@ -93,7 +107,14 @@
           </label>
           <% products[2].forEach(c => { %>
             <label>
-              <input type="radio" name="mouse" class="card-input-element" value="<%= c._id %>"/>
+              <% if(setup.products[2] != null) {if (JSON.stringify(setup.products[2]._id) == JSON.stringify(c._id)) { %>
+                <input type="radio" name="mouse" class="card-input-element" value="<%= c._id %>" checked />
+              <%} else {  %>
+                <input type="radio" name="mouse" class="card-input-element" value="<%= c._id %>" unchecked/>
+              <% }} else {%>
+                <input type="radio" name="mouse" class="card-input-element" value="<%= c._id %>" unchecked/>
+              <% }%>
+              
                 <div class="card card-input">
                   <h5 class="card-header"><%= c.name %></h5>
                   <div class="card-body">
@@ -114,7 +135,7 @@
 
         
         <label>
-          <input type="radio" name="keyboard" class="card-input-element" value="" checked/>
+          <input type="radio" name="keyboard" class="card-input-element" value="" <%= setup.products[3] == null ? 'checked' : '' %>/>
             <div class="card card-input">
               <h5 class="card-header">N/A</h5>
               <div class="card-body">
@@ -124,7 +145,14 @@
         </label>
         <% products[3].forEach(c => { %>
           <label>
-            <input type="radio" name="keyboard" class="card-input-element" value="<%= c._id %>"/>
+            <% if(setup.products[3] != null) {if (JSON.stringify(setup.products[3]._id) == JSON.stringify(c._id)) { %>
+              <input type="radio" name="keyboard" class="card-input-element" value="<%= c._id %>" checked/>
+            <%} else {  %>
+              <input type="radio" name="keyboard" class="card-input-element" value="<%= c._id %>"/>
+              <% }} else {%>
+                <input type="radio" name="keyboard" class="card-input-element" value="<%= c._id %>"/>
+              <% }%>
+            
               <div class="card card-input">
                 <h5 class="card-header"><%= c.name %></h5>
                 <div class="card-body">
@@ -146,7 +174,7 @@
 
         
         <label>
-          <input type="radio" name="desk" class="card-input-element" value="" checked/>
+          <input type="radio" name="desk" class="card-input-element" value="" <%= setup.products[4] == null ? 'checked' : '' %>/>
             <div class="card card-input">
               <h5 class="card-header">N/A</h5>
               <div class="card-body">
@@ -156,7 +184,14 @@
         </label>
         <% products[4].forEach(c => { %>
           <label>
-            <input type="radio" name="desk" class="card-input-element" value="<%= c._id %>"/>
+            <% if(setup.products[3] != null) {if (JSON.stringify(setup.products[4]._id) == JSON.stringify(c._id)) { %>
+              <input type="radio" name="desk" class="card-input-element" value="<%= c._id %>" checked/>
+            <%} else {  %>
+              <input type="radio" name="desk" class="card-input-element" value="<%= c._id %>" unchecked/>
+              <% }} else {%>
+                <input type="radio" name="desk" class="card-input-element" value="<%= c._id %>" unchecked/>
+              <% }%>
+            
               <div class="card card-input">
                 <h5 class="card-header"><%= c.name %></h5>
                 <div class="card-body">

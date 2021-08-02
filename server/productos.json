@@ -1,0 +1,99 @@
+[{
+  "name": "Cyonsa Chroma",
+  "price": 1520.99,
+  "brand": "Razer",
+  "type": "Keyboard",
+  "url" : "https://www.amazon.com.mx/Razer-Cynosa-Chroma-retroiluminadas-Individualmente/dp/B075KMZ4MX",
+  "img_url" : "https://m.media-amazon.com/images/I/61WgmLgwuQL._AC_SL1023_.jpg",
+  "description" : ["Powered by razer Chroma incluye teclas retro iluminadas programables individualmente y 16.8 millones de opciones de color", "Teclas especiales para juegos con tacto almohadillado", "Diseño duradero y resistente a las salpicaduras para una seguridad absoluta", "Reconocimiento de hasta 10 teclas simultáneamente con tecnología antighosting", "Razer synapse 3 beta para una configuración mejorada máxima personalización"]
+},
+{
+  "name": "MX KEYS",
+  "price": 1999.99,
+  "brand": "Logitech",
+  "type": "Keyboard",
+  "url": "https://www.amazon.com.mx/Logitech-920-009296-MX-Keys/dp/B0849Q78C2",
+  "img_url" : "https://m.media-amazon.com/images/I/81veEJlziQL._AC_SL1500_.jpg",
+  "description" : ["Recargable por USB-C, conserva la energía hasta por 10 días con una carga completa", "Iluminacion inteligente, los sensores de proximidad detectan tus manos y el teclado se ilumina cuando acercas los dedos.", "MX KEYS se puede emparejar mediante bluetooth de bajo consumo o USB unifying, con hasta tres dispositivos entre los que alternar con sólo pulsar un botón."]
+},
+{
+  "name": "K380",
+  "price": 899,
+  "brand": "Logitech",
+  "type": "Keyboard",
+  "url": "https://www.amazon.com.mx/Logitech-Teclado-Bluetooth-Android-920-009595/dp/B0849JJ36D/",
+  "img_url" : "https://m.media-amazon.com/images/I/610mUmVrIFL._AC_SL1500_.jpg",
+  "description": ["El teclado multidispositivo K380 se conecta a todos los dispositivos inalámbricos Bluetooth compatibles con teclados externos", "Automáticamente asigna teclas, recuerda accesos directos y te ofrece una distribución habitual para tu plataforma preferida.", "Las teclas cóncavas con mecanismo de tijera y bajo perfil son ideales para las puntas de tus dedos y ofrecen una experiencia de escritura fluida y silenciosa parecida a la de un portátil."]
+},
+{
+  "name": "Escritorio para Computadora",
+  "price": 1259,
+  "brand": "TOPLIVING",
+  "type": "Desk",
+  "url": "https://www.amazon.com.mx/TOP-LIVING-Escritorio-Computadora-Minimalista-Recamara/dp/B07NM9WLZ2/",
+  "img_url": "https://m.media-amazon.com/images/I/61XBwtYPGbL._AC_SL1080_.jpg",
+  "description" : ["Dimensiones del paquete 126.5 x 69.5 x 7 cm", "Material : metal, Madera"]
+},
+{
+  "name": "Escritorio en forma de L ",
+  "price": 3299,
+  "brand": "Furniture R",
+  "type": "Desk",
+  "url" : "https://www.amazon.com.mx/FurnitureR-Escritorio-computadora-superficie-Marr%C3%B3n%EF%BC%88120/dp/B084RD1D8M/",
+  "img_url" : "https://m.media-amazon.com/images/I/71FI4FrbfNL._AC_SL1500_.jpg",
+  "description" : ["Dimensiones 120 x 45 x 75 cm", "Color marron"]
+},
+{
+  "name": "Escritorio eléctrico de pie",
+  "price": 9351.75,
+  "brand": "FEZIBO",
+  "type": "Desk",
+  "url" : "https://www.amazon.com.mx/FEZIBO-Escritorio-el%C3%A9ctrico-ajustable-espresso/dp/B08GLBNSXY/",
+  "img_url" : "https://m.media-amazon.com/images/I/71Qs3IZbqAS._AC_SL1500_.jpg",
+  "description" : ["Altura eléctrica ajustable: el escritorio tiene 3 botones preestablecidos para personalizar las alturas deseadas de 70 a 120 cm", "Dimensiones 60.96 x 121.92 x 70.1 cm"]
+},
+{
+  "name": "Pebble M350",
+  "price": 498.80,
+  "brand": "Logitech",
+  "type": "Mouse",
+  "url" : "https://www.amazon.com.mx/Logitech-Pebble-M350-inal%C3%A1mbrico-Blanco/dp/B07WV6TR8X/",
+  "img_url" : "https://m.media-amazon.com/images/I/51zsDtua-WL._AC_SL1500_.jpg",
+  "description" : ["Conéctate sencillamente vía Bluetooth o con el pequeño receptor USB de 2,4 GHz", "Con una batería que puede durar 18 meses. Logitech Pebble M350 entra automáticamente en modo de suspensión para ahorrar energía."]
+},
+{
+  "name": "AW610M",
+  "price": 2099.43,
+  "brand": "RAZER",
+  "type": "Mouse",
+  "url" : "https://www.amazon.com.mx/Alienware-AW610M-inal%C3%A1mbrico-Videojuegos-iluminaci%C3%B3n/dp/B07V83NMCV/",
+  "img_url" : "https://m.media-amazon.com/images/I/71u65w5IiEL._AC_SL1500_.jpg",
+  "description": ["Sensor nativo de 16 000 DPI de última generación de PixArt para una precisión óptima", "Personalizable 16. Iluminación AlienFX RGB de 8M"]
+},
+{
+  "name": "MX Master 3",
+  "price": 20,
+  "brand": "LOGITECH",
+  "type": "Mouse",
+  "url" : "https://www.amazon.com.mx/Logitech-910-005647-Mouse-Master-Inal%C3%A1mbrico/dp/B07XC2FWD1",
+  "img_url" : "https://m.media-amazon.com/images/I/71zp7CMBb0L._AC_SL1500_.jpg",
+  "description" : ["El acero mecanizado del botón rueda le da esa sensación táctil premium y el peso suficiente para ofrecer inercia dinámica que se siente pero que no se oye", "MX Master 3 es más rápido y 5 veces más preciso que un Mouse básico, por lo que siempre da en el píxel correcto", "Logitech Darkfield Tracking te permite el seguimiento en prácticamente cualquier superficie, incluso en cristal de 4mm, con la mejor precisión de 4.000 dpi de su clase"]
+},
+{
+  "name": "Monitor Gaming 24\"",
+  "price": 3692.55,
+  "brand": "Samsung",
+  "type": "Monitor",
+  "url" : "https://www.amazon.com.mx/SAMSUNG-Monitor-1920x1080-Flicker-LS24R350FHLXZX/dp/B07Z8PW58J/",
+  "img_url" : "https://m.media-amazon.com/images/I/91Vg-6MEI2L._AC_SL1500_.jpg",
+  "description" : ["FHD 1920x1080", "Experiencia de Juego Inmersivo, Free-sync (AMD): Brinda una respuesta de juego sin Tearing.", "75hz Refresh Rate te brinda imágenes más fluidas a comparación de los monitores que solo manejan 60hz." ]
+},
+{
+  "name": "29WP600-W UltraWide 29\"",
+  "price": 6387.99,
+  "brand": "LG",
+  "type": "Monitor",
+  "url" : "https://www.amazon.com.mx/LG-29WN600-W-29-21-UltraWide/dp/B0876DBCBX/",
+  "img_url" : "https://m.media-amazon.com/images/I/81-xYDwQaqL._AC_SL1500_.jpg",
+  "description": ["Pantalla IPS Full HD (2560 x 1080)", "Diseño prácticamente sin bordes"]
+}]

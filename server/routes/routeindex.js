@@ -116,20 +116,18 @@ app.get('/products', async (req, res) => {
     var allProducts = await Product.find();
     //inicializar matriz de productos
     var products = [];
-    for(var i = 0; i < 5; i++){
+    for(var i = 0; i < 4; i++){
         products[i]=[];
     };
     allProducts.forEach(p => {
-        if (p.type == "Computer") {
+         if (p.type == "Monitor") {
             products[0].push(p);
-        } else if (p.type == "Monitor") {
-            products[1].push(p);
         } else if (p.type == "Mouse") {
-            products[2].push(p);
+            products[1].push(p);
         } else if (p.type == "Keyboard") {
-            products[3].push(p);
+            products[2].push(p);
         } else if (p.type == "Desk") {
-            products[4].push(p);
+            products[3].push(p);
         }
     });
     res.render('products', {products});
@@ -144,44 +142,11 @@ app.get('/products/:id', async (req, res) => {
 
 //agregar un producto nuevo, desde postman o insomnia
 app.post('/product/add', async  (req,res) => {
+    console.log(req.body);
     var product = new Product(req.body);
     await product.save()
     res.send(product)
 });
-
-// app.post('/lists/edit/:id',verify, async (req, res) => {
-//     id = req.params.id;
-//     var setup  = await Setup.findById(id);
-//     console.log(setup);
-//     setup.name = req.body.name;
-//     setup.description = req.body.description;
-//     setup.price = 0;
-//     setup.user = req.userId;
-//     ((req.body.computer != '') ? computer = await Product.findById(req.body.computer) : computer = null);
-//     ((req.body.monitor != '') ? monitor = await Product.findById(req.body.monitor) : monitor = null);
-//     ((req.body.mouse != '') ? mouse = await Product.findById(req.body.mouse) : mouse = null);
-//     ((req.body.keyboard != '') ? keyboard = await Product.findById(req.body.keyboard) : keyboard = null);
-//     ((req.body.desk != '') ? desk = await Product.findById(req.body.desk) : desk = null);
-//     setup.products[0] = computer;
-//     setup.products[1] = monitor;
-//     setup.products[2] = mouse;
-//     setup.products[3] = keyboard;
-//     setup.products[4] = desk;
-    
-//     setup.products.forEach( p => {
-//         if (p != null) {
-//             setup.price = setup.price + p.price;
-//         }
-//     })
-//     await Setup.updateOne({_id: id}, setup)
-//     console.log(setup)
-//     res.redirect('/lists')
-// })
-
-//para ver setups
-app.get('/setups', async (req, res) => {
-    res.render('setups');
-})
 
 //render de la pagina de login
 app.get('/login', (req,res) => {

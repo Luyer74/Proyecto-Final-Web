@@ -5,16 +5,20 @@
             <div class="col">
                 <div class="product-phrase">
                     <h1 class="display-4"><%= product.name %> </h1>
-                    <p class="h5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error praesentium repudiandae ab molestias illum corrupti nisi eum pariatur, quae fugit ea aspernatur corporis ut blanditiis consequuntur incidunt vel quidem distinctio!</p>
+                    <ul>
+                        <% for( let index = 0; index < product.description.length; index++ ) { %>
+                            <li class="list-unstyled h5"><%= product.description[index] %> </li>
+                        <% } %>
+                    </ul>
                     <div class="img-container text-center mt-5">
-                        <img src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1356&q=80"
+                        <img src="<%= product.img_url %> "
                             alt="" class="img-fluid product-img rounded shadow">
                     </div>
                     <br>
                     <h3>Precio: $ <%= product.price %> </h3>
                     <h3>Marca: <%= product.brand %> </h3>
                     <button type="button" class="btn btn-primary btn-lg mt-2" data-toggle="modal" id="addItem">Agregar a una lista</button> &nbsp;
-                    <button type="button" class="btn btn-light btn-lg mt-2">Comprar</button>
+                    <a href="<%= product.url %> " type="button" target="_blank" class="btn btn-light btn-lg mt-2" role="button">Comprar</a>
                 </div>
             </div>
         </div>

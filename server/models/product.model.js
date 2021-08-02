@@ -6,7 +6,10 @@ var ProductSchema = Schema ({
     name: String,
     price: Number,
     brand: String,
-    type: String
+    type: String,
+    url: String,
+    img_url : String,
+    description : [String]
 });
 
 module.exports = mongoose.model('product', ProductSchema);

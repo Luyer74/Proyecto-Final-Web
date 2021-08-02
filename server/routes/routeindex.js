@@ -67,6 +67,7 @@ app.get('/lists/:id/delete', verify, async (req, res) => {
     res.redirect('/lists');
 })
 
+//borrar producto de lista
 app.post('/lists/:id/deleteProduct', verify, async (req, res) => {
     var id = req.params.id;
     var prod_id = req.body.prod_id;
@@ -76,6 +77,7 @@ app.post('/lists/:id/deleteProduct', verify, async (req, res) => {
     res.send('producto eliminado');
 })
 
+//agregar producto a lista
 app.post('/products/:id/addToList', verify, async(req, res) => {
     var id = req.params.id;
     //encontrar producto por id
@@ -88,6 +90,26 @@ app.post('/products/:id/addToList', verify, async(req, res) => {
     list.products.push(prod);
     await list.save();
     res.send("added product");
+})
+
+//para editar una lista
+app.get('/lists/:id/edit',verify, async (req, res) => {
+    id = req.params.id;
+    var list = await Setup.findById(id);
+    res.render('editSetup', {list});
+})
+
+//actualizar lista editada
+app.post('/lists/:id/edit', verify, async (req, res) => {
+    var id = req.params.id;
+    var setup = await Setup.findById(id);
+    var updated_data = {
+        name: req.body.name,
+        description: req.body.description
+    }
+    var result = await Setup.updateOne({_id: id}, updated_data);
+    await setup.save();
+    res.redirect('/lists');
 })
 
 app.get('/products', async (req, res) => {
@@ -126,32 +148,6 @@ app.post('/product/add', async  (req,res) => {
     await product.save()
     res.send(product)
 });
-
-//para editar una lista
-// app.get('/lists/edit/:id',verify, async (req, res) => {
-//     id = req.params.id;
-//     var setup  = await Setup.findById(id);
-//     allProducts = await Product.find();
-//     products = [];
-//     for(var i = 0; i < 5; i++){
-//         products[i]=[];
-//     };
-//     products[0] = [];
-//     allProducts.forEach(p => {
-//         if (p.type == "Computer") {
-//             products[0].push(p);
-//         } else if (p.type == "Monitor") {
-//             products[1].push(p);
-//         } else if (p.type == "Mouse") {
-//             products[2].push(p);
-//         } else if (p.type == "Keyboard") {
-//             products[3].push(p);
-//         } else if (p.type == "Desk") {
-//             products[4].push(p);
-//         }
-//     });
-//     res.render('editSetup', {setup, products, id});
-// })
 
 // app.post('/lists/edit/:id',verify, async (req, res) => {
 //     id = req.params.id;

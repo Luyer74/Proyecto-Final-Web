@@ -1,32 +1,43 @@
 <%- include ("./templates/_header") %> 
-<form action="/lists/add" method = "POST">
-  <div class="container">
-
-    <div class="row justify-content-left">
-      <div class="col-4">
-        <div class="form-group">
-          <label for="name">Nombre</label>
-          <input type="text" class="form-control" id="name" name= "name"placeholder="Nombre">
+<section class="registration py-5">
+  <div class="row px-5 align-items-center">
+    <div class="col">
+      <h1 class="h1 pb-5">Crear Lista</h1>
+      <div class="row reg-form shadow rounded">
+        <div class="col">
+          <form action="/lists/add" method="POST">
+            <div class="container">
+          
+              <div class="row justify-content-left">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Ej. Setup Gamer">
+                  </div>
+                </div>
+              </div>
+          
+              <div class="row justify-content-left">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="description">Descripcion</label>
+                    <textarea class="form-control" id="description" name="description" rows="5"></textarea>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="row">
+                <div class="col">
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Crear lista</button>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
-      </div>
-    </div>
-
-    <div class="row justify-content-left">
-      <div class="col-7">
-        <div class="form-group">
-          <label for="description">Descripcion</label>
-          <textarea class="form-control" id="description" name = "description" rows="2"></textarea>
-        </div>
-      </div>
-    </div>
-
-    <div class="row justify-content-left">
-      <div class="col-5">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Crear lista</button>
       </div>
     </div>
   </div>
-</form>
 
+</section>
 
 <%- include ("./templates/_footer") %> 

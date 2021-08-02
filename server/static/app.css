@@ -152,3 +152,7 @@ td {
   color: black;
   padding: 20px;
 }
+
+section {
+  min-height: 95vh;
+}

@@ -4,6 +4,7 @@ const Setup = require('../models/setup.model');
 const Product = require('../models/product.model');
 const User = require('../models/user.model');
 const verify = require("../middleware/verifyAccess");
+const getUser = require("../middleware/getUser");
 var fs = require('fs');
 var jwt = require("jsonwebtoken");
 
@@ -145,10 +146,11 @@ app.post('/setup/edit/:id',verify, async (req, res) => {
 })
 
 //para ver una lista especifica
-app.get('/setup/:id', async (req, res) => {
+app.get('/setup/:id', getUser, async (req, res) => {
     id = req.params.id;
     var setup  = await Setup.findById(id)
-    res.render('setup', {setup});
+    user = req.userId;
+    res.render('setup', {setup, user});
 })
 
 //para ver listas

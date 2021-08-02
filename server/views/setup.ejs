@@ -4,9 +4,11 @@
             <div class="col-auto">
                 <h1> <%= setup.name %></h1>
             </div>
-            <div class="col">
-                <a href="/setup/edit/<%= setup._id%>" class="btn btn-primary m-3"> Editar lista</a>
-            </div>
+            <% if(user == setup.user) { %>
+                <div class="col">
+                    <a href="/setup/edit/<%= setup._id%>" class="btn btn-primary m-3"> Editar lista</a>
+                </div>
+            <% }    %>
         </div>
         <div class="row">
             <div class="col">

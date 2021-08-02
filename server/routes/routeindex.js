@@ -39,12 +39,12 @@ app.get('/setup/create',verify, async (req, res) => {
 })
 
 app.get('/products', async (req, res) => {
-    allProducts = await Product.find();
-    products = [];
+    var allProducts = await Product.find();
+    //inicializar matriz de productos
+    var products = [];
     for(var i = 0; i < 5; i++){
         products[i]=[];
     };
-    products[0] = [];
     allProducts.forEach(p => {
         if (p.type == "Computer") {
             products[0].push(p);
@@ -59,6 +59,12 @@ app.get('/products', async (req, res) => {
         }
     });
     res.render('products', {products});
+})
+
+app.get('/products/:id', async (req, res) => {
+    id = req.params.id;
+    var product = await Product.findById(id);
+    res.render('product', {product});
 })
 
 //post agregar un setup

@@ -1,41 +1,133 @@
-<%- include ("./templates/_header") %> 
-<div class='container-fluid mt-3'>
-        <div class="row">
+<%- include ("./templates/_header") %>
+
+<section class="products px-5">
+    <div class="product-header">
+        <div class="row p-5 text-center">
             <div class="col">
-                <h1> Todos los Productos</h1>
+                <div class="product-phrase">
+                    <h1 class="display-4">Productos</h1>
+                    <p class="h5">Contamos con información de los productos más populares para que puedas realizar tu setup de escritorio con la mejor calidad posible desde computadoras hasta escritorios. ¡Agrega los productos que quieras a tu lista y empieza a construir tu setup soñado!</p>
+                </div>
             </div>
         </div>
-
-    <div class="row row-cols-1 row-cols-md-3 mt-2"">
-            <% products.forEach(c => { %>
-                <% c.forEach(p => {%>
-                <div class="card">
-                    <% if(p.type == 'Computer') {%>
-                        <img src="https://www.creativefabrica.com/wp-content/uploads/2018/12/Computer-icon-by-rudezstudio-6-580x386.jpg" class="card-img-top" alt="...">
-                    <% } else if(p.type == 'Monitor') {%>
-                        <img src="https://images.samsung.com/is/image/samsung/mx-t35f-lf27t350fhlxzx-frontblack-308825262?$720_576_PNG$" class="card-img-top" alt="...">
-                    <% } else if(p.type == 'Mouse') {%>
-                        <img src="https://www.seekpng.com/png/detail/285-2853781_computer-mouse-by-unit-computer-mouse-drawing-png.png" class="card-img-top" alt="...">
-                    <% } else if(p.type == 'Keyboard') {%>
-                        <img src="https://media.kingston.com/hyperx/product/hx-product-keyboard-alloy-core-rgb-hxkb5me2es-1-sm.jpg" class="card-img-top" alt="...">
-                    <% } else if(p.type == 'Desk') {%>
-                        <img src="https://www.ikea.com/cz/en/images/products/arkelstorp-desk-black__0735967_pe740301_s5.jpg?f=s" class="card-img-top" alt="...">
-                    <% } else {%>
-                        <img src="https://i.stack.imgur.com/y9DpT.jpg" class="card-img-top" alt="...">
-                    <% }%>
-                    <div class="card-body">
-                      <h5 class="card-title"><%= p.name %></h5>
-                      <p class="card-text">$<%= p.price %></p>
-                      <p class="card-text">Marca: <%= p.brand %></p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted"><%= p.type %></small>
-                    </div>
-                </div>
-                  <% }) %>
-            <% }) %>
     </div>
-</div>
-
+    <div class="product-content rounded">
+        <h3 class="h3">Computadoras</h3>
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Precio</th>
+            </thead>
+            <tbody>
+                <% products[0].forEach(product=> { %>
+                    <tr>
+                        <th scope="row"><a href="/products/<%=product._id %>">
+                                <%= product.name %>
+                            </a> </th>
+                        <td>
+                            <%= product.brand %>
+                        </td>
+                        <td>
+                            <%= product.price %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+        <h3 class="h3">Monitores</h3>
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Precio</th>
+            </thead>
+            <tbody>
+                <% products[1].forEach(product=> { %>
+                    <tr>
+                        <th scope="row"><a href="/products/<%=product._id %>">
+                                <%= product.name %>
+                            </a> </th>
+                        <td>
+                            <%= product.brand %>
+                        </td>
+                        <td>
+                            <%= product.price %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+        <h3 class="h3">Ratones</h3>
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Precio</th>
+            </thead>
+            <tbody>
+                <% products[2].forEach(product=> { %>
+                    <tr>
+                        <th scope="row"><a href="/products/<%=product._id %>">
+                                <%= product.name %>
+                            </a> </th>
+                        <td>
+                            <%= product.brand %>
+                        </td>
+                        <td>
+                            <%= product.price %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+        <h3 class="h3">Teclados</h3>
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Precio</th>
+            </thead>
+            <tbody>
+                <% products[3].forEach(product=> { %>
+                    <tr>
+                        <th scope="row"><a href="/products/<%=product._id %>">
+                                <%= product.name %>
+                            </a> </th>
+                        <td>
+                            <%= product.brand %>
+                        </td>
+                        <td>
+                            <%= product.price %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+        <h3 class="h3">Escritorios</h3>
+        <table class="table table-hover">
+            <thead>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Precio</th>
+            </thead>
+            <tbody>
+                <% products[4].forEach(product=> { %>
+                    <tr>
+                        <th scope="row"><a href="/products/<%=product._id %>">
+                                <%= product.name %>
+                            </a> </th>
+                        <td>
+                            <%= product.brand %>
+                        </td>
+                        <td>
+                            <%= product.price %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</section>
 
 <%- include ("./templates/_footer") %> 
